@@ -328,7 +328,7 @@ impl<'a, W: Write> ser::Serializer for &'a mut QsSerializer<W> {
         _variant_index: u32,
         variant: &'static str,
     ) -> Result<Self::Ok> {
-        self.write_key(variant.as_bytes())?;
+        self.write_value(variant.as_bytes())?;
         Ok(())
     }
 
